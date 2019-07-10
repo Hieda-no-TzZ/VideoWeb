@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Video-on-Demand Web</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/css.css" %}">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    .gray{
+{#        background: gray;#}
+{#        box-shadow: 0 7px 0 gray;#}
+        margin-left: 80px;
+        margin-right: 80px;
+        text-align: center;
+}
+    .box-div {
+        float: left;
+        margin: 10px 20px;
+        width: 400px;
+    }
+    .video-div {
+        text-align: center;
+    }
+
+    h1 {
+        margin-left: 100px;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+
+<body>
+
+{% include "nav.html" %}
+<h1>视频列表</h1>
+<div class="gray">
+    {%   for video in video_list %}
+        <a href="#" value={{ video.url }}>
+        <div class="box-div">
+            <div class="video-div">
+                <img src="{% static video.poster %}", width="400px" >
+{#            <img src="{% static "Sol.jpg" %}", width="400px" >#}
+            </div>
+            <div>
+                <p>{{ video.name }}</p>
+            </div>
+
+        </div>
+
+        </a>
+    {% endfor %}
+</div>
+
+
+        <!-- 视频列表 -->
+{#        <div class="row video_div">#}
+{#            {% for video in video_list%}#}
+{#                <div class="col-sm-6 col-md-6">#}
+{#                    <div class="thumbnail">#}
+{#                        <a href="#" value= {{video.url}}> #}
+{#                        <img src="{% static "img/women.jpg" %}" width="250px" #}
+{#                            alt="通用的占位符缩略图">#}
+{#                        </a>#}
+{#                        <div class="caption">#}
+{#                            <h3>{{video.name}}</h3>#}
+{#                            <p>#}
+{#                                简介：{{video.desc}}<br>#}
+{#                                视频大小：{{video.size}}MB#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+    
+    <script type="text/javascript">
+            $('a').click(
+                function() {
+                    document.location.href ='/show?url=' + $(this).attr('value');
+                }
+            );
+    </script>
+</body>
+</html>

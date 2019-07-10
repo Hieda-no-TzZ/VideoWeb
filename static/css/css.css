@@ -1,0 +1,13 @@
+.video_div {
+    margin-right: 300px;
+    margin-left: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #FFFFFF;
+}
+
+.bg-container {
+    background-color: #EEEEEE;
+    height:100%;
+    width: 100%;
+}

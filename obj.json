@@ -1,0 +1,33 @@
+{
+    "user_id": "yuanning",
+    "display_name": "yuanning",
+    "email": "",
+    "suspended": 0,
+    "max_buckets": 1000,
+    "auid": 0,
+    "subusers": [],
+    "keys": [
+        {
+            "user": "yuanning",
+            "access_key": "MQCFF83ABPRSZBHZX9YQ",
+            "secret_key": "HMymdZOTK0W3CbdzR3mV9UYOJMVCufSoiY3Cra0l"
+        }
+    ],
+    "swift_keys": [],
+    "caps": [],
+    "op_mask": "read, write, delete",
+    "default_placement": "",
+    "placement_tags": [],
+    "bucket_quota": {
+        "enabled": false,
+        "max_size_kb": -1,
+        "max_objects": -1
+    },
+    "user_quota": {
+        "enabled": false,
+        "max_size_kb": -1,
+        "max_objects": -1
+    },
+    "temp_url_keys": []
+}
+

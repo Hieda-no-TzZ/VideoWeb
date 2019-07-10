@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Video-on-Demand Web</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "css/css.css" %}">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    div {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+</style>
+{% include "nav.html" %}
+<p align="center">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <caption>视频列表</caption>
+            <thead>
+                <tr class="info">
+                    <th>视频名称</th>
+                    <th>视频简介</th>
+                    <th>视频大小</th>
+                    <th>上次修改时间</th>
+                    <th>删除视频</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for video in video_list%}
+                    <tr class="success">
+                        <td>{{video.name}}</td>
+                        <td>{{video.desc}}</td>
+                        <td>{{video.size}} MB</td>
+                        <td>{{video.modify}}</td>
+                        <td><button type="button" class="btn btn-danger">删除</button></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</p>
+
+<script>
+    $(function() {
+        $(".btn").click(function(){
+            // console.log('mmp')
+            // console.log($(this).parent().prev().prev().prev().prev().text())
+            name = $(this).parent().prev().prev().prev().text() + '@' + $(this).parent().prev().prev().prev().prev().text()
+            // console.log(name)
+            document.location.href ='/delete?name=' + name;
+        });
+    });  
+</script>
+
+</body>
+</html>
